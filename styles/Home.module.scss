@@ -8,13 +8,13 @@
   text-align:center;
   max-width: 450px;
   min-height: 100vh;
-  padding: 0 0;
+  padding: 20px 0 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
+
 
   h1{
     font-size: 48px;
@@ -58,7 +58,7 @@
   }
 
   h1{
-    color:black;
+    color:white;
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 20px;
@@ -67,7 +67,7 @@
   button{
     float: right;
     background-color: #f1c40f;
-    color: white;
+    color: black;
     font-size: 18px;
     margin-top: 10px;
     margin-bottom: 20px;
