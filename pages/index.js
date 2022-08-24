@@ -293,7 +293,7 @@ export default function Home({stories}) {
             <h2>Aktuelle velkomstgaver:</h2>
 
             {stories.map((story,i) => {
-              if(router.query.hasOwnProperty('id') && router.query.id === story.id){
+              if(router.query.hasOwnProperty('id') && router.query.id === story._id){
                 pos++
                 return(
                     <article key={i} className={styles.article}>
@@ -359,7 +359,7 @@ export default function Home({stories}) {
 
 export async function getStaticProps() {
 
-  let res = await fetch('https://app.gjerrigknark.com/data/gjerrigknark/insidertips.php?sort=random')
+  let res = await fetch('https://app.gjerrigknark.com/data/gjerrigknark/profitableStories.php?category=2')
   const stories = await res.json()
 
 
