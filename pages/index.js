@@ -265,7 +265,7 @@ export default function Home({stories}) {
         <h2>fra Gjerrigknark.com</h2>*/}
 
           <Image
-              src={"/velkomstgaver.png?v=0002"}
+              src={"/velkomstgaver.png?v=0003"}
               layout={"intrinsic"}
               width={480}
               height={179}
@@ -290,7 +290,7 @@ export default function Home({stories}) {
           </div>
 
           <div className={styles.stories}>
-            <h2>Aktuelle velkomstgaver:</h2>
+            <h2><span style={{fontStyle:'normal'}}>🎁</span> Aktuelle velkomstgaver:</h2>
 
             {stories.map((story,i) => {
               if(router.query.hasOwnProperty('id') && router.query.id === story._id){
