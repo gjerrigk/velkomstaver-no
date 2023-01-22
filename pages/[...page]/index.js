@@ -28,7 +28,7 @@ export default function Page({story, stories}) {
     if(!story){
         return(
             <>
-                Feil
+                Det oppstod en feil - videresender
             </>
         )
     }
