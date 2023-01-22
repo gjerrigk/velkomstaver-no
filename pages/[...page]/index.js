@@ -125,7 +125,7 @@ export async function getStaticProps(context){
             return;
         }
 
-        if(story){
+        if(story.id){
             return {
                 props: {
                     story,
