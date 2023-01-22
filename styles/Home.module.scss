@@ -2,6 +2,33 @@
   padding: 0 2rem;
 }
 
+.mainStory{
+  h1{
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  button{
+    float: right;
+    background-color: #f1c40f;
+    color: black;
+    font-size: 26px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #f1c40f;
+    padding: 5px 10px 5px 10px;
+    font-weight: 700;
+
+    &:hover{
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+
+  padding-bottom: 60px;
+}
+
 .main {
   margin-right: auto;
   margin-left: auto;
