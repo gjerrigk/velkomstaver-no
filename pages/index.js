@@ -30,7 +30,7 @@ export default function Home({stories}) {
   return (
       <div className={styles.container}>
         <Head>
-          <title>Velkomstgaver.no</title>
+          <title>Velkomstgaver.no: </title>
           <meta name="description" content="Få tips om nye velkomstgaver du kan motta." />
           <meta name="facebook-domain-verification" content="kg3hicif9rh2gk4tue8xfoaz1vlfun" />
           <link rel="icon" href="/favicon.ico" />

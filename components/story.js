@@ -21,7 +21,7 @@ export default function Story({story,pos}){
 
     return (
             <article className={styles.article}>
-                <Link href={"/"+story.slug.replace(/Gratis-ting-og-vareprover\//,"")}>•</Link>
+                <Link style={{color:'black'}} href={"/"+story.slug.replace(/Gratis-ting-og-vareprover\//,"")}>•</Link>
                 <a rel={"noreferrer noopener"} target={"_blank"} href={"https://gjerrigknark.com/"+(story.slug?story.slug:story._id)+"/besok?rov=velkomstgaver-pos"+pos+((router.query.hasOwnProperty('rov'))?"-"+router.query.rov:"")}>
                     <h1>{story.title}</h1>
                     {story.images && story.images.main_image && story.images.main_image_aspect_ratio &&
