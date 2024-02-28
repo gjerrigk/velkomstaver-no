@@ -18,6 +18,8 @@ export default function Page({story, stories}) {
     let pos = 0
 
 
+
+
     useEffect(() => {
         if(router.query.hasOwnProperty('rov')){
             setRov(router.query.rov)

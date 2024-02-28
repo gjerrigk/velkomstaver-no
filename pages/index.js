@@ -20,6 +20,7 @@ export default function Home({stories}) {
 
   let pos = 0
 
+  let takenStories = [];
 
   useEffect(() => {
     if(router.query.hasOwnProperty('rov')){
@@ -62,17 +63,28 @@ export default function Home({stories}) {
             })}
 
             {stories.map((story2,i) => {
+              if((story2.hasOwnProperty('id') && !takenStories.includes(story2.id)) || (story2.hasOwnProperty('_id') && !takenStories.includes(story2._id))){
               if(!router.query.hasOwnProperty('id') || (router.query.hasOwnProperty('id') && router.query.id !== story2.id)) {
                 pos++
-                return (
-                    <Story
-                        story={story2}
-                        key={i}
-                        pos={pos}
-                    />
-                )
+
+                if(story2.hasOwnProperty('id')){
+                  takenStories.push(story2.id);
+                }
+                if(story2.hasOwnProperty('_id')){
+                  takenStories.push(story2._id);
+                }
+
+                if(!story2.hasOwnProperty('promotion_external') || story2.promotion_external == true){
+                  return (
+                      <Story
+                          story={story2}
+                          key={i}
+                          pos={pos}
+                      />
+                  )
+                }
               }
-            })
+            }})
 
             }
 
@@ -90,9 +102,14 @@ export default function Home({stories}) {
 
 export async function getStaticProps() {
 
-  let res = await fetch('https://app.gjerrigknark.com/data/gjerrigknark/profitableStories.php?category=2')
-  const stories = await res.json()
+  const res = await fetch('https://app.gjerrigknark.com/data/gjerrigknark/profitableStories.php?category=2')
+  const tempStories = await res.json()
 
+
+  const res2 = await fetch('https://app.gjerrigknark.com/data/gjerrigknark/categoryStories.php?id=2&sort=paid_first')
+  const tempStories2 = await res2.json()
+
+  const stories = tempStories.concat(tempStories2)
 
   return {
     props: {
